@@ -22,9 +22,9 @@
         <button type="submit" class="submitBtn" id="submitBtn">Search</button>
       </form>
       <div class="cityInfo">
-        <img src="./img/drizzle.png" alt="sun" id="weather" />
-        <h1 class="temperature" id="temperature">25°C</h1>
-        <h2 class="city" id="city">Tbilisi</h2>
+        <img src="./img/drizzle.png" alt="sun" id="weatherPic" />
+        <h1 class="temperature" id="temperature"></h1>
+        <h2 class="city" id="city"></h2>
         <div class="windAndHumidity">
           <div class="humidity">
             <img
@@ -33,15 +33,15 @@
               class="humAndWindImg"
             />
             <div class="insideHumidity inside">
-              <p>50%</p>
+              <p id="humidityPerc"></p>
               <p>Humidity</p>
             </div>
           </div>
           <div class="wind">
             <img src="./img/wind.png" alt="wind" class="humAndWindImg" />
             <div class="insideHumidity inside">
-              <p>50%</p>
-              <p>Humidity</p>
+              <p id="windPerc"></p>
+              <p>Wind speed</p>
             </div>
           </div>
         </div>

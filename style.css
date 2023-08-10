@@ -19,9 +19,13 @@ body {
   max-width: 470px;
   background: linear-gradient(135deg, #00feba, #5b548a);
   padding: 20px;
-  margin: 80px auto 0;
+  margin: 60px auto 0;
   border-radius: 20px;
   text-align: center;
+}
+
+.searchForm {
+  padding: 10px;
 }
 
 .search {
@@ -37,6 +41,7 @@ body {
 }
 .cityInfo {
   padding: 20px;
+  opacity: 0;
 }
 
 #weather {
@@ -69,6 +74,10 @@ body {
 }
 
 @media only screen and (min-width: 600px) {
+  .card {
+    margin: 120px auto 0;
+  }
+
   .submitBtn {
     font-size: 16px;
   }
