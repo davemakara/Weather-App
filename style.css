@@ -5,7 +5,7 @@
   text-decoration: none;
   list-style-type: none;
   font-family: Arial, Helvetica, sans-serif;
-  /* color: rgb(233, 233, 233); */
+  color: #555;
 }
 body {
   background-color: #222;
@@ -18,7 +18,7 @@ body {
   width: 90%;
   max-width: 470px;
   background: linear-gradient(135deg, #00feba, #5b548a);
-  padding: 20px;
+  padding: 20px 10px;
   margin: 60px auto 0;
   border-radius: 20px;
   text-align: center;
@@ -44,41 +44,82 @@ body {
   opacity: 0;
 }
 
-#weather {
-  width: 150px;
-  height: 150px;
+#weatherPic {
+  width: 140px;
+  height: 140px;
   margin: 10px 0;
 }
 
 .temperature {
-  font-size: 60px;
+  font-size: 50px;
   margin: 10px 0;
 }
 
 .city {
-  font-size: 40px;
+  font-size: 30px;
 }
 .windAndHumidity {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 40px;
 }
 .humidity,
 .wind {
   display: flex;
+  align-items: center;
 }
 
 .humAndWindImg {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
 }
 
-@media only screen and (min-width: 600px) {
+.inside p,
+.temperature,
+.city {
+  color: #fff;
+}
+
+.inside p {
+  padding: 3px 0;
+  text-align: start;
+}
+
+#humidityPerc,
+#windPerc {
+  font-size: 20px;
+  /* margin: 5px 0; */
+  /* padding: 5px 0; */
+}
+
+@media only screen and (min-width: 800px) {
   .card {
     margin: 120px auto 0;
   }
 
   .submitBtn {
     font-size: 16px;
+  }
+
+  #weatherPic {
+    width: 160px;
+    height: 160px;
+  }
+
+  .temperature {
+    font-size: 60px;
+  }
+
+  .city {
+    font-size: 40px;
+  }
+
+  .windAndHumidity {
+    justify-content: space-around;
+  }
+  #humidityPerc,
+  #windPerc {
+    font-size: 30px;
   }
 }

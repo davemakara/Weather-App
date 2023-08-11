@@ -23,7 +23,7 @@ const checkWeather = async function (city) {
   temperature.innerHTML = Math.round(data.main.temp) + "°C";
   cityName.innerHTML = data.name;
   humidityPercentage.innerHTML = data.main.humidity + "%";
-  windPercentage.innerHTML = data.wind.speed + "km/h";
+  windPercentage.innerHTML = data.wind.speed + " km/h";
 
   console.log(data);
 };
