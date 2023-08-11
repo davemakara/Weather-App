@@ -10,22 +10,32 @@ const temperature = document.querySelector("#temperature");
 const cityName = document.querySelector("#city");
 const humidityPercentage = document.querySelector("#humidityPerc");
 const windPercentage = document.querySelector("#windPerc");
+let loading = false;
 
 const checkWeather = async function (city) {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-  );
-  const data = await response.json();
+  try {
+    // loading = true;
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    );
+    const data = await response.json();
 
-  let weatherInfo = data.weather[0].main.toLowerCase();
-  weatherPicture.src = `./img/${weatherInfo}.png`;
+    let weatherInfo = data.weather[0].main.toLowerCase();
+    weatherPicture.src = `./img/${weatherInfo}.png`;
 
-  temperature.innerHTML = Math.round(data.main.temp) + "°C";
-  cityName.innerHTML = data.name;
-  humidityPercentage.innerHTML = data.main.humidity + "%";
-  windPercentage.innerHTML = data.wind.speed + " km/h";
+    temperature.innerHTML = Math.round(data.main.temp) + "°C";
+    cityName.innerHTML = data.name;
+    humidityPercentage.innerHTML = data.main.humidity + "%";
 
-  console.log(data);
+    // windPercentage.innerHTML = loading
+    //   ? `loading... `
+    //   : `${data.wind.speed} km/h`;
+    windPercentage.innerHTML = data.wind.speed + " km/h";
+
+    // console.log(data);
+  } catch (err) {
+    console.log("Error occured..");
+  }
 };
 
 btnSubmit.addEventListener("click", (e) => {
