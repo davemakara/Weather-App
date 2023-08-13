@@ -21,6 +21,7 @@ const checkWeather = async function (city) {
     const data = await response.json();
 
     let weatherInfo = data.weather[0].main.toLowerCase();
+    weatherPicture.alt = weatherInfo;
     weatherPicture.src = `./img/${weatherInfo}.png`;
 
     temperature.innerHTML = Math.round(data.main.temp) + "°C";
@@ -32,7 +33,7 @@ const checkWeather = async function (city) {
     //   : `${data.wind.speed} km/h`;
     windPercentage.innerHTML = data.wind.speed + " km/h";
 
-    // console.log(data);
+    console.log(data);
   } catch (err) {
     console.log("Error occured..");
   }
